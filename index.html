@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dennis + Jennah</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <div class="header">
+        <h1>Dennis + Jennah</h1>
+        <div class="timer" id="timer"></div>
+    </div>
+    <div class="timeline">
+        <div class="timeline-item left">
+            <div class="timeline-item-content">
+                <div class="image-caption">
+                    <img src="images/IMG_2813.JPG" alt="Event 1">
+                    <p>Caption for event 1</p>
+                </div>
+            </div>
+        </div>
+        <div class="timeline-item right">
+            <div class="timeline-item-content">
+                <p>Event 2</p>
+                <div class="image-caption">
+                    <img src="images/IMG_9308.JPG" alt="Event 2">
+                    <p>Caption for event 2</p>
+                </div>
+            </div>
+        </div>
+        <div class="timeline-item left">
+            <div class="timeline-item-content">
+                <div class="image-caption">
+                    <img src="images/IMG_2813.JPG" alt="Event 1">
+                    <p>Caption for event 1</p>
+                </div>
+            </div>
+        </div>
+        <!-- Add more timeline items here -->
+    </div>
+
+    <script>
+        // Timer logic
+        const startDate = new Date("2022-06-16T00:00:00Z"); // Replace with your specified date
+        const timerElement = document.getElementById('timer');
+
+        function updateTimer() {
+            const now = new Date();
+            const elapsed = now - startDate;
+
+            const days = Math.floor(elapsed / (1000 * 60 * 60 * 24));
+            const hours = Math.floor((elapsed % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+            const minutes = Math.floor((elapsed % (1000 * 60 * 60)) / (1000 * 60));
+            const seconds = Math.floor((elapsed % (1000 * 60)) / 1000);
+
+            timerElement.textContent = `${days}d ${hours}h ${minutes}m ${seconds}s`;
+        }
+
+        setInterval(updateTimer, 1000);
+        updateTimer();
+    </script>
+</body>
+</html>
