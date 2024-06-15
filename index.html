@@ -3,62 +3,91 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Dennis + Jennah</title>
+    <title>Timer and Timeline</title>
     <link rel="stylesheet" href="styles.css">
 </head>
 <body>
     <div class="header">
         <h1>Dennis + Jennah</h1>
+        <nav>
+            <a href="plans.html">Plans for dennah.xyz</a>
+        </nav>
         <div class="timer" id="timer"></div>
     </div>
-    <div class="timeline">
-        <div class="timeline-item left">
-            <div class="timeline-item-content">
-                <div class="image-caption">
-                    <img src="images/IMG_2813.JPG" alt="Event 1">
-                    <p>Caption for event 1</p>
-                </div>
+    <div class="timeline-container">
+        <div class="timeline">
+            <div class="node" data-image="images/early_drunk_escapades.jpg" data-caption="Around our first 'date' getting tacos and watching Lamb.">
+                <span class="node-date">December 3, 2021 </span>
+            </div>
+            <div class="node" data-image="images/yosemite_feet.jpeg" data-caption="Infamous Yosemite trip.">
+                <span class="node-date">March 25, 2022 </span>
+            </div>
+            <div class="node" data-image="images/jennah_grad.jpg" data-caption="Jennah graduation: Dennis in love.">
+                <span class="node-date">June 10, 2022 </span>
+            </div>
+
+            <div class="start-node"> <span class="start-node-date">June 16, 2022</span> </div>
+            
+            <div class="node" data-image="images/jennah_bangs_selfie.jpg" data-caption="Peaceful summer bliss."> 
+                <span class="node-date">July 2, 2022 </span>
+            </div>
+            <div class="node" data-image="images/photogenic_reading.JPEG" data-caption="Peaceful summer bliss (cont.).">
+                <span class="node-date">July 3, 2022 </span>
+            </div>
+
+            <div class="node" data-image="images/jennah_bangs_selfie.JPG" data-caption="Peaceful summer bliss (cont. cont.).">
+                <span class="node-date">July 4, 2022 </span>
+            </div>
+
+            <div class="node" data-image="images/bigsur_feet.JPEG" data-caption="More foot photos, this time from Big Sur.">
+                <span class="node-date">July 24, 2022 </span>
+            </div>
+
+            <div class="node" data-image="images/walter_and_jessie.JPEG" data-caption="Never ask what happened this night.">
+                <span class="node-date">October 29, 2022 </span>
+            </div>
+
+            <div class="node" data-image="images/also_early_drunk_escapades.JPEG" data-caption="#1 aunt and uncle <3">
+                <span class="node-date">November 27, 2022 </span>
+            </div>
+
+            <div class="node" data-image="images/colorado_kiss.JPG" data-caption="Perhaps one of our best kisses -- I got butterflies.">
+                <span class="node-date">December 28, 2022 </span>
+            </div>
+
+            <div class="node" data-image="images/bed_selfie.JPG" data-caption="Inspiration for one of the greatest works of art ever.">
+                <span class="node-date">January 31, 2023 </span>
+            </div>
+
+            <div class="node" data-image="images/italy_mirror_selfie.JPEG" data-caption="'We'll have the whole bottle, that's light work.'">
+                <span class="node-date">March 26, 2023 </span>
+            </div>
+
+            <div class="node" data-image="images/eid_selfie.JPEG" data-caption="Our first Eid together :)">
+                <span class="node-date">April 21, 2023 </span>
+            </div>
+
+            <div class="node" data-image="images/glasgow_selfie.JPEG" data-caption="Proppa Bri'ish geezas, innit?">
+                <span class="node-date"> November 17, 2023 </span>
+            </div>
+
+            <div class="node" data-image="images/iceland_river_selfie.JPEG" data-caption="We actually eat it up in winter climate ngl">
+                <span class="node-date"> November 19, 2023 </span>
+            </div>
+
+            <div class="node" data-image="images/karaoke.JPEG" data-caption="T - 10 minutes until we tore that karaoke bar up with Creep by Radiohead">
+                <span class="node-date"> March 14, 2024 </span>
+            </div>
+
+            <div class="node" data-image="images/dennis_grad.JPEG" data-caption="DINK incoming >:)">
+                <span class="node-date"> June 14, 2024 </span>
             </div>
         </div>
-        <div class="timeline-item right">
-            <div class="timeline-item-content">
-                <p>Event 2</p>
-                <div class="image-caption">
-                    <img src="images/IMG_9308.JPG" alt="Event 2">
-                    <p>Caption for event 2</p>
-                </div>
-            </div>
-        </div>
-        <div class="timeline-item left">
-            <div class="timeline-item-content">
-                <div class="image-caption">
-                    <img src="images/IMG_2813.JPG" alt="Event 1">
-                    <p>Caption for event 1</p>
-                </div>
-            </div>
-        </div>
-        <!-- Add more timeline items here -->
     </div>
-
-    <script>
-        // Timer logic
-        const startDate = new Date("2022-06-16T00:00:00Z"); // Replace with your specified date
-        const timerElement = document.getElementById('timer');
-
-        function updateTimer() {
-            const now = new Date();
-            const elapsed = now - startDate;
-
-            const days = Math.floor(elapsed / (1000 * 60 * 60 * 24));
-            const hours = Math.floor((elapsed % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
-            const minutes = Math.floor((elapsed % (1000 * 60 * 60)) / (1000 * 60));
-            const seconds = Math.floor((elapsed % (1000 * 60)) / 1000);
-
-            timerElement.textContent = `${days}d ${hours}h ${minutes}m ${seconds}s`;
-        }
-
-        setInterval(updateTimer, 1000);
-        updateTimer();
-    </script>
+    <div id="hover-box">
+        <img id="hover-image" src="" alt="">
+        <p id="hover-caption"></p>
+    </div>
+    <script src="script.js"></script>
 </body>
 </html>
